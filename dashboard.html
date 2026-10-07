@@ -1,113 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub - Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>  
-
-    <main>
-
-        <section>
-            <h1>Student Dashboard</h1>
-            <p>Welcome to your StudentHub dashboard.</p>
-        </section>
-
-        <section>
-            <h2>Student Information</h2>
-
-            <table border="1">
-                <caption>Student Details</caption>
-
-                <thead>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>Name</th>
-                        <th>Course</th>
-                        <th>Semester</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>STU101</td>
-                        <td>Rahul Patel</td>
-                        <td>Computer Science</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Course Progress</h2>
-
-            <table border="1">
-                <caption>Current Courses</caption>
-
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                        <th>Instructor</th>
-                        <th>Progress</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Data Structures</td>
-                        <td>Dr. Patel</td>
-                        <td>75%</td>
-                        <td>In Progress</td>
-                    </tr>
-
-                    <tr>
-                        <td>Web Development</td>
-                        <td>Prof. Shah</td>
-                        <td>90%</td>
-                        <td>In Progress</td>
-                    </tr>
-
-                    <tr>
-                        <td>Java Programming</td>
-                        <td>Dr. Mehta</td>
-                        <td>100%</td>
-                        <td>Completed</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <aside>
-            <h2>Upcoming</h2>
-            <p>Next assignment submission: 20 September 2026.</p>
+    <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p>
+                <span>om@example.com</span>
+                <a href="#">Sign out</a>
+            </div>
         </aside>
 
-    </main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / Dashboard</div>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
+            <h1>Welcome, Om</h1>
+            <p class="subtitle">Your academic snapshot for this semester — attendance, performance, and what's coming next.</p>
 
+            <div class="grid-3">
+                <div class="card">
+                    <p class="breadcrumbs">ATTENDANCE</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">84%</h2>
+                    <p class="subtitle" style="margin:0;">116 of 138 classes</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs">AVERAGE SCORE</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">33</h2>
+                    <p class="subtitle" style="margin:0;">7 assessments recorded</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs">UPCOMING EVENTS</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">4</h2>
+                    <p class="subtitle" style="margin:0;">Campus calendar</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="slider-header">
+                    <div>
+                        <p class="breadcrumbs">HIGHLIGHTS</p>
+                        <h2 style="margin-top: 5px;">What's happening</h2>
+                    </div>
+                    <div class="slider-controls">
+                        <button id="prev-slide">&larr;</button>
+                        <button id="next-slide">&rarr;</button>
+                    </div>
+                </div>
+
+                <div class="slide active">
+                    <span class="tag academic">📚 Academic</span>
+                    <h3>Mid-semester examination timetable released</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted);">Check the latest exam schedule and plan your preparation early.</p>
+                </div>
+                <div class="slide">
+                    <span class="tag event">🏆 Events</span>
+                    <h3>Inter-Department Football League</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted);">Opening matches of the annual league start next week.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
