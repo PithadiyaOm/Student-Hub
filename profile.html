@@ -1,98 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub - Profile</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
+    <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html" class="active">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p>
+                <span>om@example.com</span>
+                <a href="#">Sign out</a>
+            </div>
+        </aside>
 
-    <main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / Profile</div>
+            </div>
 
-        <section>
-            <h1>Student Profile</h1>
-            <p>View your personal and academic information.</p>
-        </section>
+            <p class="breadcrumbs">SETTINGS</p>
+            <h1>My Profile</h1>
+            <p class="subtitle">View and manage your personal and academic information.</p>
 
-        <section>
-            <h2>Personal Information</h2>
+            <div class="grid-3">
+                <div class="card" style="grid-column: span 2;">
+                    <h2>Personal Information</h2>
+                    <table>
+                        <tr><td><strong>Student ID</strong></td><td>STU1024</td></tr>
+                        <tr><td><strong>Name</strong></td><td>Om Pithadiya</td></tr>
+                        <tr><td><strong>Email</strong></td><td>om@example.com</td></tr>
+                        <tr><td><strong>Phone</strong></td><td>+91 9876543210</td></tr>
+                    </table>
+                </div>
 
-            <table border="1">
-                <caption>Student Profile Details</caption>
+                <div class="card">
+                    <h2>Academic Status</h2>
+                    <p class="breadcrumbs" style="margin-top: 15px; margin-bottom: 5px;">COURSE</p>
+                    <p style="font-weight: 600;">Computer Engineering</p>
+                    
+                    <p class="breadcrumbs" style="margin-top: 15px; margin-bottom: 5px;">SEMESTER</p>
+                    <p style="font-weight: 600;">Semester 4</p>
 
-                <tbody>
-                    <tr>
-                        <th>Student ID</th>
-                        <td>STU1000</td>
-                    </tr>
-
-                    <tr>
-                        <th>Name</th>
-                        <td>Pithadiya Om</td>
-                    </tr>
-
-                    <tr>
-                        <th>Email</th>
-                        <td>om@example.com</td>
-                    </tr>
-
-                    <tr>
-                        <th>Phone</th>
-                        <td>1234567890</td>
-                    </tr>
-
-                    <tr>
-                        <th>Course</th>
-                        <td>Computer</td>
-                    </tr>
-
-                    <tr>
-                        <th>Semester</th>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </section>
-
-        <section>
-            <h2>Academic Information</h2>
-
-            <article>
-                <h3>Current Semester</h3>
-                <p>Semester 3</p>
-            </article>
-
-            <article>
-                <h3>Academic Status</h3>
-                <p>Active Student</p>
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
-
+                    <p class="breadcrumbs" style="margin-top: 15px; margin-bottom: 5px;">STATUS</p>
+                    <span class="tag event" style="margin-top: 5px;">Active Student</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
