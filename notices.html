@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Notices</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="notices.html" class="active">Academic Notices</a>
+                <a href="events.html">Campus Events</a>
+                <a href="directory.html">Student Directory</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="user-profile"><p>Om Pithadiya</p><span>om@example.com</span><a href="#">Sign out</a></div>
+        </aside>
+
+        <main>
+            <div class="top-header">
+                <div class="controls"><button id="hamburger-btn">☰ Menu</button><button id="theme-toggle">🌙 Dark</button></div>
+                <div class="breadcrumbs">Home / Academic Notices</div>
+            </div>
+
+            <p class="breadcrumbs">COMMUNICATION</p>
+            <h1>Academic Notices</h1>
+            <p class="subtitle">View academic updates, examination notices, administrative information and campus announcements.</p>
+
+            <div class="card controls-bar">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Search</label>
+                    <input type="text" id="noticeSearch" placeholder="Search by notice title or description">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Filter by category</label>
+                    <select id="noticeCategory">
+                        <option value="All">All categories</option>
+                        <option value="Examination">Examination</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Administrative">Administrative</option>
+                        <option value="Placement">Placement</option>
+                        <option value="Library">Library</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Sort records</label>
+                    <select id="noticeSort">
+                        <option value="default">Default order</option>
+                        <option value="date-desc">Newest first</option>
+                        <option value="date-asc">Oldest first</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="notice-count" class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;"></p>
+            <div id="notices-container" class="grid-2"><p>Loading notices...</p></div>
+            <div class="pagination" id="notice-pagination" style="display: none;">
+                <button id="noticePrev" class="btn btn-secondary" style="width: auto;">Previous</button>
+                <span id="noticePageInfo" style="font-weight: 600;">Page 1 of 1</span>
+                <button id="noticeNext" class="btn" style="width: auto;">Next</button>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+</html>
