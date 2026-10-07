@@ -1,0 +1,8 @@
+[
+    { "id": 1, "question": "How do I check my attendance?", "category": "Academic", "answer": "Open the Attendance page from the StudentHub navigation to view course-wise attendance records." },
+    { "id": 2, "question": "Where can I find study materials?", "category": "Academic", "answer": "Open Study Resources to access notes, slides, assignments and other learning resources." },
+    { "id": 3, "question": "How can I search for a campus event?", "category": "Events", "answer": "Use the Events page search box and category filter to find events by title, location or category." },
+    { "id": 4, "question": "How do I filter student profiles?", "category": "Student Directory", "answer": "Open Student Directory and use the search box or division filter to narrow the displayed profiles." },
+    { "id": 5, "question": "How do I view academic notices?", "category": "Notices", "answer": "Open Academic Notices from the navigation to search and filter current notices." },
+    { "id": 6, "question": "How does pagination work?", "category": "StudentHub", "answer": "After searching or filtering, use the Previous and Next controls to move between result pages." }
+]
