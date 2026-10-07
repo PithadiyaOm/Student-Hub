@@ -153,3 +153,41 @@ body.dark-mode .input-error {
     border: 2px solid #ff8a80 !important;
     background-color: rgba(255, 138, 128, 0.1) !important;
 }
+
+/* =========================================
+   PRACTICAL 6: FETCH API & JSON RENDERING
+   ========================================= */
+
+/* Search & Filter Bar */
+.controls-bar { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; padding: 25px; }
+
+/* 2-Column Grid for Events */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+/* Dynamic Event Card Styles */
+.event-card { border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; background: var(--bg-card); display: flex; flex-direction: column; transition: transform 0.2s; }
+.event-card:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.event-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.event-date { font-size: 0.8rem; color: var(--text-muted); }
+.event-card h3 { margin-bottom: 10px; font-size: 1.2rem; color: var(--text-main); }
+.event-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+.event-footer { font-size: 0.85rem; color: var(--text-main); font-weight: 600; border-top: 1px solid var(--border-color); padding-top: 15px; }
+
+/* Pagination */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; margin-bottom: 40px; }
+.btn-secondary { background-color: var(--text-muted); color: var(--bg-card); }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .controls-bar { grid-template-columns: 1fr; }
+}
+
+/* Student Profile Card Styles */
+.profile-avatar { width: 50px; height: 50px; background-color: var(--primary-btn); color: var(--primary-btn-text); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 15px; }
+.profile-header { display: flex; justify-content: space-between; align-items: center; }
+.skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.skill-tag { font-size: 0.75rem; border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 15px; background: var(--bg-body); }
+
+/* Notice Card Styles */
+.priority-high { color: #d93025; font-weight: bold; }
+.priority-normal { color: var(--text-muted); }
