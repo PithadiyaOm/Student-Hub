@@ -109,3 +109,47 @@ input[type="text"], input[type="email"], input[type="password"], input[type="tel
 table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 th, td { padding: 12px 15px; border-bottom: 1px solid var(--border-color); text-align: left; }
 th { color: var(--text-muted); font-size: 0.85rem; font-weight: bold; }
+
+/* =========================================
+   PRACTICAL 5: REGISTRATION FORM STYLES
+   ========================================= */
+
+/* 1. Explicit Error Text Colors */
+.error-text { 
+    color: #d93025 !important; /* Strong Red */
+    font-size: 0.85rem; 
+    margin-top: 6px; 
+    display: block; 
+    font-weight: 600; 
+}
+
+/* 2. Highlight the Input Box in Red */
+.input-error { 
+    border: 2px solid #d93025 !important; 
+    background-color: #fff8f8 !important; 
+}
+
+/* Radio and Checkbox Layouts */
+.radio-group-container { border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; margin-bottom: 25px; background: var(--bg-body); }
+.radio-group { display: flex; gap: 20px; align-items: center; margin-top: 10px; }
+.radio-group label { display: flex; align-items: center; gap: 8px; font-weight: normal; margin-bottom: 0; cursor: pointer; text-transform: none; }
+.radio-group input[type="radio"] { width: auto; margin: 0; cursor: pointer; }
+
+.checkbox-group { margin-top: 25px; margin-bottom: 25px; }
+.checkbox-group label { display: flex; align-items: center; gap: 10px; font-weight: normal; cursor: pointer; text-transform: none; }
+.checkbox-group input[type="checkbox"] { width: auto; margin: 0; cursor: pointer; transform: scale(1.1); }
+
+/* Password Strength Indicator */
+.password-strength { font-size: 0.85rem; font-weight: 600; margin-top: 8px; transition: color 0.3s ease; }
+.strength-weak { color: #dc3545; }
+.strength-medium { color: #ffc107; }
+.strength-strong { color: #28a745; }
+
+/* Dark mode adjustments for error colors */
+body.dark-mode .error-text {
+    color: #ff8a80 !important; /* Lighter red for dark mode visibility */
+}
+body.dark-mode .input-error {
+    border: 2px solid #ff8a80 !important;
+    background-color: rgba(255, 138, 128, 0.1) !important;
+}
