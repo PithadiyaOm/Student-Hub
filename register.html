@@ -13,6 +13,7 @@
     </div>
 
     <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
         <aside id="sidebar">
             <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
             <nav>
@@ -43,43 +44,88 @@
             </div>
 
             <p class="breadcrumbs">ACCOUNT</p>
-            <h1>Student Registration</h1>
+            <h1>Registration Form</h1>
             <p class="subtitle">Create your StudentHub student account.</p>
 
             <div class="form-box">
-                <form action="#" method="post">
+                <form id="registrationForm" novalidate>
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" aria-describedby="nameError">
+                        <span id="nameError" class="error-text" aria-live="polite"></span>
                     </div>
+
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" aria-describedby="emailError">
+                        <span id="emailError" class="error-text" aria-live="polite"></span>
                     </div>
+
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" maxlength="10" aria-describedby="mobileError">
+                        <span id="mobileError" class="error-text" aria-live="polite"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="course">Course</label>
-                        <select id="course" name="course">
-                            <option value="">Select Course</option>
-                            <option value="cse">Computer Science</option>
-                            <option value="it">Information Technology</option>
-                            <option value="ec">Electronics and Communication</option>
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" aria-describedby="passwordError">
+                        <span id="passwordError" class="error-text" aria-live="polite"></span>
+                        <div id="passwordStrength" class="password-strength"></div>
                     </div>
+
                     <div class="form-group">
                         <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" aria-describedby="confirmError">
+                        <span id="confirmError" class="error-text" aria-live="polite"></span>
                     </div>
-                    <button type="submit" class="btn">Register</button>
+
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select id="course" name="course" aria-describedby="courseError">
+                            <option value="">Select Course</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                        </select>
+                        <span id="courseError" class="error-text" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <select id="year" name="year" aria-describedby="yearError">
+                            <option value="">Select Year</option>
+                            <option value="First Year">First Year</option>
+                            <option value="Second Year">Second Year</option>
+                            <option value="Third Year">Third Year</option>
+                            <option value="Fourth Year">Fourth Year</option>
+                        </select>
+                        <span id="yearError" class="error-text" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group radio-group-container">
+                        <label>Gender</label>
+                        <div class="radio-group" id="genderGroup">
+                            <label><input type="radio" name="gender" value="Male"> Male</label>
+                            <label><input type="radio" name="gender" value="Female"> Female</label>
+                            <label><input type="radio" name="gender" value="Other"> Other</label>
+                        </div>
+                        <span id="genderError" class="error-text" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" aria-describedby="termsError">
+                            I accept the Terms and Conditions
+                        </label>
+                        <span id="termsError" class="error-text" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: auto;">Create Account</button>
+                    <div id="formSuccess" style="display: none; color: var(--success-text); background: var(--success); padding: 15px; border-radius: 6px; margin-top: 15px;">Registration successful!</div>
                 </form>
             </div>
+            
+            <p style="margin-top: 20px;">Already have an account? <a href="login.html" style="text-decoration: underline;">Login</a></p>
         </main>
     </div>
     <script src="JS/script.js"></script>
