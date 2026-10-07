@@ -6,59 +6,73 @@
     <title>StudentHub - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <section>
-            <h1>Welcome to StudentHub</h1>
-            <p>Your student portal for managing academic activities.</p>
-        </section>
-
-        <section>
-            <h2>StudentHub Features</h2>
-
-            <article>
-                <h3>Courses</h3>
-                <p>View your enrolled courses and course information.</p>
-            </article>
-
-            <article>
-                <h3>Assignments</h3>
-                <p>Check assignments and their due dates.</p>
-            </article>
-
-            <article>
-                <h3>Results</h3>
-                <p>View your academic results and grades.</p>
-            </article>
-        </section>
-
-        <aside>
-            <h2>Quick Information</h2>
-            <p>Login to access your StudentHub dashboard.</p>
+    <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html" class="active">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p>
+                <span>om@example.com</span>
+                <a href="#">Sign out</a>
+            </div>
         </aside>
 
-    </main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home</div>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
+            <h1>Welcome to StudentHub</h1>
+            <p class="subtitle">Your student portal for managing academic activities.</p>
 
+            <div class="grid-3">
+                <div class="card">
+                    <p class="breadcrumbs" style="margin-bottom: 10px;">FEATURE</p>
+                    <h3 style="margin-bottom: 10px;">Courses</h3>
+                    <p class="text-muted">View your enrolled courses and course information.</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs" style="margin-bottom: 10px;">FEATURE</p>
+                    <h3 style="margin-bottom: 10px;">Assignments</h3>
+                    <p class="text-muted">Check assignments and their due dates.</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs" style="margin-bottom: 10px;">FEATURE</p>
+                    <h3 style="margin-bottom: 10px;">Results</h3>
+                    <p class="text-muted">View your academic results and grades.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Quick Information</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Login to access your personalized StudentHub dashboard.</p>
+                <a href="login.html" class="btn" style="width: auto;">Go to Login</a>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
 </html>
