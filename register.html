@@ -1,86 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub - Register</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
+    <div class="layout">
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html" class="active">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p><span>om@example.com</span><a href="#">Sign out</a>
+            </div>
+        </aside>
 
-    <main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / Register</div>
+            </div>
 
-        <section>
+            <p class="breadcrumbs">ACCOUNT</p>
             <h1>Student Registration</h1>
+            <p class="subtitle">Create your StudentHub student account.</p>
 
-            <form action="#" method="post">
-
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <br><br>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
-
-                <br><br>
-
-                <label for="course">Course:</label>
-                <select id="course" name="course">
-
-                    <option value="">Select Course</option>
-                    <option value="cse">Computer Science</option>
-                    <option value="it">Information Technology</option>
-                    <option value="ec">Electronics and Communication</option>
-
-                </select>
-
-                <br><br>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <br><br>
-
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password"
-                       name="confirm-password" required>
-
-                <br><br>
-
-                <button type="submit">Register</button>
-                <button type="reset">Clear</button>
-
-            </form>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
-
+            <div class="form-box">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select id="course" name="course">
+                            <option value="">Select Course</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ec">Electronics and Communication</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
