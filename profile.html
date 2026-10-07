@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub - Profile</title>
+    <title>StudentHub - Profile & Directory</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,17 +17,11 @@
         <aside id="sidebar">
             <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
             <nav>
-                <a href="home.html">Home</a>
                 <a href="dashboard.html">Dashboard</a>
-                <a href="events.html">Events</a>
-                <a href="profile.html" class="active">Profile</a>
+                <a href="notices.html">Academic Notices</a>
+                <a href="events.html">Campus Events</a>
+                <a href="profile.html" class="active">Profile & Directory</a>
                 <a href="faq.html">FAQ</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="feedback.html">Feedback</a>
-                <a href="login.html">Login</a>
-                <a href="register.html">Register</a>
-                <a href="admin.html">Admin</a>
             </nav>
             <div class="user-profile">
                 <p>Om Pithadiya</p>
@@ -42,14 +36,17 @@
                     <button id="hamburger-btn">☰ Menu</button>
                     <button id="theme-toggle">🌙 Dark</button>
                 </div>
-                <div class="breadcrumbs">Home / Profile</div>
+                <div class="breadcrumbs">Home / Profile & Directory</div>
             </div>
 
+            <!-- ============================================== -->
+            <!-- PART 1: MY PROFILE -->
+            <!-- ============================================== -->
             <p class="breadcrumbs">SETTINGS</p>
             <h1>My Profile</h1>
             <p class="subtitle">View and manage your personal and academic information.</p>
 
-            <div class="grid-3">
+            <div class="grid-3" style="margin-bottom: 50px;">
                 <div class="card" style="grid-column: span 2;">
                     <h2>Personal Information</h2>
                     <table>
@@ -72,8 +69,55 @@
                     <span class="tag event" style="margin-top: 5px;">Active Student</span>
                 </div>
             </div>
+
+            <!-- ============================================== -->
+            <!-- PART 2: STUDENT DIRECTORY (FETCH API JSON) -->
+            <!-- ============================================== -->
+            <p class="breadcrumbs">DIRECTORY</p>
+            <h1>Student Directory</h1>
+            <p class="subtitle">Browse reusable student profile cards rendered dynamically from students.json.</p>
+
+            <!-- Search & Filter Controls -->
+            <div class="card controls-bar">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Search</label>
+                    <input type="text" id="dirSearch" placeholder="Search by name, roll number, or skill">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Filter by category</label>
+                    <select id="dirCategory">
+                        <option value="All">All semesters</option>
+                        <option value="Semester 3">Semester 3</option>
+                        <option value="Semester 4">Semester 4</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Sort records</label>
+                    <select id="dirSort">
+                        <option value="default">Default order</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="dir-count" class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;"></p>
+            
+            <!-- Dynamic Data Container -->
+            <div id="directory-container" class="grid-2">
+                <p>Loading directory...</p>
+            </div>
+            
+            <!-- Pagination Controls -->
+            <div class="pagination" id="dir-pagination" style="display: none;">
+                <button id="dirPrev" class="btn btn-secondary" style="width: auto;">Previous</button>
+                <span id="dirPageInfo" style="font-weight: 600;">Page 1 of 1</span>
+                <button id="dirNext" class="btn" style="width: auto;">Next</button>
+            </div>
+
         </main>
     </div>
+    
     <script src="JS/script.js"></script>
 </body>
 </html>
