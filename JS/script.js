@@ -103,3 +103,124 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+// ==========================================
+// PRACTICAL 5: FORM VALIDATION
+// ==========================================
+const regForm = document.getElementById("registrationForm");
+
+if (regForm) {
+    // Elements
+    const nameEl = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const mobileEl = document.getElementById("mobile");
+    const passwordEl = document.getElementById("password");
+    const confirmEl = document.getElementById("confirm-password");
+    const courseEl = document.getElementById("course");
+    const yearEl = document.getElementById("year");
+    const termsEl = document.getElementById("terms");
+    const strengthText = document.getElementById("passwordStrength");
+        
+    // Regular Expressions
+    const nameRegex = /^[a-zA-Z\s]{3,}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobileRegex = /^[0-9]{10}$/;
+
+    // Helper function to show/hide errors
+    function validateField(element, condition, errorMsgId, errorMessage) {
+        const errorEl = document.getElementById(errorMsgId);
+        if (condition) {
+            errorEl.textContent = "";
+            element.classList.remove("input-error");
+            return true;
+        } else {
+            errorEl.textContent = errorMessage;
+            element.classList.add("input-error");
+            return false;
+        }
+    }
+
+    // 1. Password Strength Checker[cite: 13, 14]
+    passwordEl.addEventListener("input", function() {
+        const val = passwordEl.value;
+        let strength = 0;
+        
+        if (val.length >= 8) strength++; // Length
+        if (/[A-Z]/.test(val) && /[a-z]/.test(val)) strength++; // Mixed case
+        if (/[0-9]/.test(val)) strength++; // Numbers
+        if (/[^A-Za-z0-9]/.test(val)) strength++; // Special chars
+
+        strengthText.className = "password-strength"; // Reset classes
+        
+        if (val.length === 0) {
+            strengthText.textContent = "";
+        } else if (strength <= 2) {
+            strengthText.textContent = "Password Strength: Weak";
+            strengthText.classList.add("strength-weak");
+        } else if (strength === 3) {
+            strengthText.textContent = "Password Strength: Medium";
+            strengthText.classList.add("strength-medium");
+        } else {
+            strengthText.textContent = "Password Strength: Strong";
+            strengthText.classList.add("strength-strong");
+        }
+
+        // Real-time confirm password check[cite: 14]
+        if (confirmEl.value.length > 0) {
+            validateField(confirmEl, confirmEl.value === passwordEl.value, "confirmError", "Passwords do not match.");
+        }
+    });
+
+    // 2. Real-time validation extensions[cite: 14]
+    nameEl.addEventListener("input", () => validateField(nameEl, nameRegex.test(nameEl.value.trim()), "nameError", "Full name is required (letters only)."));
+    emailEl.addEventListener("input", () => validateField(emailEl, emailRegex.test(emailEl.value.trim()), "emailError", "Please enter a valid email address."));
+    mobileEl.addEventListener("input", () => validateField(mobileEl, mobileRegex.test(mobileEl.value.trim()), "mobileError", "Mobile number must be exactly 10 digits."));
+    confirmEl.addEventListener("input", () => validateField(confirmEl, confirmEl.value === passwordEl.value, "confirmError", "Passwords do not match."));
+    courseEl.addEventListener("change", () => validateField(courseEl, courseEl.value !== "", "courseError", "Please select your course."));
+    yearEl.addEventListener("change", () => validateField(yearEl, yearEl.value !== "", "yearError", "Please select your year."));
+    termsEl.addEventListener("change", () => document.getElementById("termsError").textContent = termsEl.checked ? "" : "You must accept the Terms and Conditions.");
+
+    // 3. Form Submit Handler
+    regForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page reload
+        
+        let isValid = true;
+
+        // Validate all fields on submit[cite: 13]
+        isValid &= validateField(nameEl, nameRegex.test(nameEl.value.trim()), "nameError", "Full name is required.");
+        isValid &= validateField(emailEl, emailRegex.test(emailEl.value.trim()), "emailError", "Valid email is required.");
+        isValid &= validateField(mobileEl, mobileRegex.test(mobileEl.value.trim()), "mobileError", "10-digit mobile number is required.");
+        isValid &= validateField(passwordEl, passwordEl.value.length >= 8, "passwordError", "Password must be at least 8 characters.");
+        isValid &= validateField(confirmEl, confirmEl.value === passwordEl.value && confirmEl.value !== "", "confirmError", "Please confirm your password.");
+        isValid &= validateField(courseEl, courseEl.value !== "", "courseError", "Please select your course.");
+        isValid &= validateField(yearEl, yearEl.value !== "", "yearError", "Please select your year.");
+            
+        // Validate Gender Radio Buttons
+        const genderSelected = document.querySelector('input[name="gender"]:checked');
+        const genderError = document.getElementById("genderError");
+        if (!genderSelected) {
+            genderError.textContent = "Please select your gender.";
+            isValid = false;
+        } else {
+            genderError.textContent = "";
+        }
+
+        // Validate Checkbox
+        const termsError = document.getElementById("termsError");
+        if (!termsEl.checked) {
+            termsError.textContent = "You must accept the Terms and Conditions.";
+            isValid = false;
+        } else {
+            termsError.textContent = "";
+        }
+
+        // If completely valid, show success message
+        if (isValid) {
+            document.getElementById("formSuccess").style.display = "block";
+            regForm.reset(); // Clear the form
+            strengthText.textContent = ""; // Clear password text
+        } else {
+            document.getElementById("formSuccess").style.display = "none";
+        }
+    });
+}
