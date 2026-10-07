@@ -1,104 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub - Events</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
+    <div class="layout">
+        <!-- GLOBAL SIDEBAR -->
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="profile.html">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p>
+                <span>om@example.com</span>
+                <a href="#">Sign out</a>
+            </div>
+        </aside>
 
-    <main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / Events</div>
+            </div>
 
-        <section>
-            <h1>College Events</h1>
-            <p>View upcoming events and activities.</p>
-        </section>
+            <p class="breadcrumbs">CAMPUS</p>
+            <h1>Events</h1>
+            <p class="subtitle">Workshops, cultural programmes, sports and exam schedules.</p>
 
-        <section>
-            <h2>Upcoming Events</h2>
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">2026-08-19 • 10:00 AM</p>
+                    <h3 style="margin-bottom: 10px;">Workshop: Building with React Router</h3>
+                </div>
+                <button class="btn open-modal-btn" style="width: auto;">View details</button>
+            </div>
+        </main>
+    </div>
 
-            <table border="1">
-                <caption>StudentHub Events</caption>
-
-                <thead>
-                    <tr>
-                        <th>Event Name</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Venue</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Technical Fest</td>
-                        <td>25 September 2026</td>
-                        <td>10:00 AM</td>
-                        <td>Main Auditorium</td>
-                    </tr>
-
-                    <tr>
-                        <td>Sports Day</td>
-                        <td>30 September 2026</td>
-                        <td>9:00 AM</td>
-                        <td>College Ground</td>
-                    </tr>
-
-                    <tr>
-                        <td>Cultural Event</td>
-                        <td>5 October 2026</td>
-                        <td>4:00 PM</td>
-                        <td>Open Stage</td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </section>
-
-        <section>
-            <h2>Event Information</h2>
-
-            <article>
-                <h3>Technical Fest</h3>
-                <p>
-                    A technical event featuring coding competitions,
-                    project demonstrations and technical activities.
-                </p>
-            </article>
-
-            <article>
-                <h3>Sports Day</h3>
-                <p>
-                    Students can participate in various indoor and
-                    outdoor sports activities.
-                </p>
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
-
+    <!-- Modal Popup -->
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal">&times;</button>
+            <p class="breadcrumbs" style="margin-bottom: 10px;">STUDENTHUB</p>
+            <h2 style="margin-bottom: 15px;">Workshop: Building with React Router</h2>
+            <p style="color: var(--text-muted);">Hands-on session on protected routes and navigation patterns.</p>
+        </div>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
