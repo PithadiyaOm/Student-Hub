@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub - Events</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>StudentHub - Campus Events</title>
+    <!-- Update this path if your style.css is in a css/ folder -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <div id="notification-banner">
@@ -14,25 +15,36 @@
 
     <div class="layout">
         <!-- GLOBAL SIDEBAR -->
+        <!-- GLOBAL SIDEBAR -->
         <aside id="sidebar">
             <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            
             <nav>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 10px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">MAIN MENU</p>
                 <a href="home.html">Home</a>
                 <a href="dashboard.html">Dashboard</a>
-                <a href="events.html" class="active">Events</a>
-                <a href="profile.html">Profile</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">ACADEMICS & CAMPUS</p>
+                <a href="notices.html">Academic Notices</a>
+                <a href="events.html">Campus Events</a>
+                <a href="profile.html">Profile & Directory</a>
                 <a href="faq.html">FAQ</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">INFO & SUPPORT</p>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="feedback.html">Feedback</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">ACCOUNT</p>
                 <a href="login.html">Login</a>
                 <a href="register.html">Register</a>
-                <a href="admin.html">Admin</a>
+                <a href="admin.html">Admin Panel</a>
             </nav>
+
             <div class="user-profile">
                 <p>Om Pithadiya</p>
                 <span>om@example.com</span>
-                <a href="#">Sign out</a>
+                <a href="login.html">Sign out</a>
             </div>
         </aside>
 
@@ -42,32 +54,58 @@
                     <button id="hamburger-btn">☰ Menu</button>
                     <button id="theme-toggle">🌙 Dark</button>
                 </div>
-                <div class="breadcrumbs">Home / Events</div>
+                <div class="breadcrumbs">Home / Campus Events</div>
             </div>
 
             <p class="breadcrumbs">CAMPUS</p>
-            <h1>Events</h1>
-            <p class="subtitle">Workshops, cultural programmes, sports and exam schedules.</p>
+            <h1>Campus Events</h1>
+            <p class="subtitle">Browse workshops, academic activities, cultural programmes and sports events loaded from external JSON.</p>
 
-            <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-                <div>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">2026-08-19 • 10:00 AM</p>
-                    <h3 style="margin-bottom: 10px;">Workshop: Building with React Router</h3>
+            <!-- PRACTICAL 6: Search & Filter Controls -->
+            <div class="card controls-bar">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="searchInput">Search</label>
+                    <input type="text" id="searchInput" placeholder="Search by event title or location">
                 </div>
-                <button class="btn open-modal-btn" style="width: auto;">View details</button>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="categoryFilter">Filter by category</label>
+                    <select id="categoryFilter">
+                        <option value="All">All categories</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Cultural">Cultural</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Exam">Exam</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="sortFilter">Sort records</label>
+                    <select id="sortFilter">
+                        <option value="default">Default order</option>
+                        <option value="date-asc">Oldest first</option>
+                        <option value="date-desc">Newest first</option>
+                    </select>
+                </div>
             </div>
+
+            <p id="record-count" class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;"></p>
+
+            <!-- Dynamic Data Container -->
+            <div id="data-container" class="grid-2">
+                <p id="loading-state">Loading events data...</p>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="pagination" id="pagination-controls" style="display: none;">
+                <button id="prevPage" class="btn btn-secondary" style="width: auto;">Previous</button>
+                <span id="pageInfo" style="font-weight: 600;">Page 1 of 1</span>
+                <button id="nextPage" class="btn" style="width: auto;">Next</button>
+            </div>
+
         </main>
     </div>
 
-    <!-- Modal Popup -->
-    <div id="my-modal" class="modal">
-        <div class="modal-content">
-            <button id="close-modal">&times;</button>
-            <p class="breadcrumbs" style="margin-bottom: 10px;">STUDENTHUB</p>
-            <h2 style="margin-bottom: 15px;">Workshop: Building with React Router</h2>
-            <p style="color: var(--text-muted);">Hands-on session on protected routes and navigation patterns.</p>
-        </div>
-    </div>
-    <script src="JS/script.js"></script>
+    <!-- Update this path if your script.js is in a js/ folder -->
+    <script src="JS/script.js"></script> 
 </body>
 </html>
