@@ -7,65 +7,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="notification-banner">
-        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
-        <button id="close-banner">&times;</button>
-    </div>
-
     <div class="layout">
-        <!-- GLOBAL SIDEBAR -->
         <aside id="sidebar">
             <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
             <nav>
-                <a href="home.html">Home</a>
                 <a href="dashboard.html">Dashboard</a>
-                <a href="events.html">Events</a>
-                <a href="profile.html">Profile</a>
+                <a href="notices.html">Academic Notices</a>
+                <a href="events.html">Campus Events</a>
+                <a href="directory.html">Student Directory</a>
                 <a href="faq.html" class="active">FAQ</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="feedback.html">Feedback</a>
-                <a href="login.html">Login</a>
-                <a href="register.html">Register</a>
-                <a href="admin.html">Admin</a>
             </nav>
-            <div class="user-profile">
-                <p>Om Pithadiya</p>
-                <span>om@example.com</span>
-                <a href="#">Sign out</a>
-            </div>
+            <div class="user-profile"><p>Om Pithadiya</p><span>om@example.com</span><a href="#">Sign out</a></div>
         </aside>
 
         <main>
             <div class="top-header">
-                <div class="controls">
-                    <button id="hamburger-btn">☰ Menu</button>
-                    <button id="theme-toggle">🌙 Dark</button>
-                </div>
+                <div class="controls"><button id="hamburger-btn">☰ Menu</button><button id="theme-toggle">🌙 Dark</button></div>
                 <div class="breadcrumbs">Home / FAQ</div>
             </div>
 
             <p class="breadcrumbs">HELP</p>
             <h1>Frequently Asked Questions</h1>
-            <p class="subtitle">Common questions about the StudentHub portal.</p>
+            <p class="subtitle">Find answers about academics, StudentHub features and the Practical 6 JSON workflow.</p>
 
-            <div class="card" style="padding: 0; border: none; background: transparent;">
-                <h2 style="margin-bottom: 20px;">Common Questions</h2>
-                
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question">How do I check my attendance? <span class="faq-icon">+</span></button>
-                        <div class="faq-answer">Open Attendance from the StudentHub dashboard to view course-wise attendance records.</div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Where can I find study materials? <span class="faq-icon">+</span></button>
-                        <div class="faq-answer">Open Study Resources to view notes, slides, assignments and past papers.</div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">How do I update my profile? <span class="faq-icon">+</span></button>
-                        <div class="faq-answer">Go to the Profile page to edit your personal data.</div>
-                    </div>
+            <div class="card controls-bar">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Search</label>
+                    <input type="text" id="faqSearch" placeholder="Search by question, category or answer">
                 </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Filter by category</label>
+                    <select id="faqCategory">
+                        <option value="All">All categories</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Events">Events</option>
+                        <option value="Student Directory">Student Directory</option>
+                        <option value="Notices">Notices</option>
+                        <option value="StudentHub">StudentHub</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="faq-count" class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;"></p>
+            <div id="faq-container" class="grid-2"><p>Loading FAQs...</p></div>
+            <div class="pagination" id="faq-pagination" style="display: none;">
+                <button id="faqPrev" class="btn btn-secondary" style="width: auto;">Previous</button>
+                <span id="faqPageInfo" style="font-weight: 600;">Page 1 of 1</span>
+                <button id="faqNext" class="btn" style="width: auto;">Next</button>
             </div>
         </main>
     </div>
