@@ -1,0 +1,8 @@
+[
+    { "id": "CE202601", "name": "Aarav Shah", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "aarav.shah@student.edu", "skills": ["C++", "DSA", "Web Development"] },
+    { "id": "CE202602", "name": "Aanya Patel", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "aanya.patel@student.edu", "skills": ["Java", "SQL", "UI Design"] },
+    { "id": "CE202603", "name": "Dev Mehta", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "dev.mehta@student.edu", "skills": ["Python", "Data Analysis", "Git"] },
+    { "id": "CE202604", "name": "Diya Trivedi", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "diya.trivedi@student.edu", "skills": ["JavaScript", "HTML", "CSS"] },
+    { "id": "CE202605", "name": "Ishaan Desai", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "ishaan.desai@student.edu", "skills": ["C++", "Algorithms", "GitHub"] },
+    { "id": "CE202612", "name": "Riya Mehta", "semester": "Semester 3", "program": "B.Tech Computer Engineering", "email": "riya.mehta@student.edu", "skills": ["Python", "AI", "Data Analysis"] }
+]
