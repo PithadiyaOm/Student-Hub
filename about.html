@@ -1,86 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub - About</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
 
-    <header>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
+    <div class="layout">
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="profile.html">Profile</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="user-profile">
+                <p>Om Pithadiya</p><span>om@example.com</span><a href="#">Sign out</a>
+            </div>
+        </aside>
 
-    <main>
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / About</div>
+            </div>
 
-        <section>
+            <p class="breadcrumbs">INFO</p>
             <h1>About StudentHub</h1>
+            <p class="subtitle">Designed to help students manage their academic and campus activities.</p>
 
-            <p>
-                StudentHub is a student portal designed to help
-                students manage their academic and campus activities
-                from one platform.
-            </p>
-        </section>
+            <div class="card">
+                <h3 style="margin-bottom: 10px;">Our Purpose</h3>
+                <p class="text-muted">The purpose of StudentHub is to provide students with easy access to courses, events, academic information, profiles and feedback services.</p>
+            </div>
 
-        <section>
-            <h2>Our Purpose</h2>
-
-            <p>
-                The purpose of StudentHub is to provide students with
-                easy access to courses, events, academic information,
-                profiles and feedback services.
-            </p>
-        </section>
-
-        <section>
-            <h2>StudentHub Features</h2>
-
-            <article>
-                <h3>Course Management</h3>
-                <p>
-                    Students can view their enrolled courses and
-                    academic progress.
-                </p>
-            </article>
-
-            <article>
-                <h3>Events</h3>
-                <p>
-                    Students can view upcoming college events and
-                    activities.
-                </p>
-            </article>
-
-            <article>
-                <h3>Student Profile</h3>
-                <p>
-                    Students can view their personal and academic
-                    information.
-                </p>
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 StudentHub</p>
-    </footer>
-
+            <div class="grid-3">
+                <div class="card">
+                    <h3 style="margin-bottom: 10px;">Course Management</h3>
+                    <p class="text-muted">Students can view their enrolled courses and academic progress.</p>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 10px;">Events</h3>
+                    <p class="text-muted">Students can view upcoming college events and activities.</p>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 10px;">Student Profile</h3>
+                    <p class="text-muted">Students can view their personal and academic information.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
