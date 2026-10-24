@@ -1,0 +1,109 @@
+<?php
+require_once 'auth.php';
+// Restrict access to logged-in users
+requireLogin();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="notification-banner">
+        <span>🔔 StudentHub update: Mid-semester examinations begin September 8, 2026.</span>
+        <button id="close-banner">&times;</button>
+    </div>
+
+    <div class="layout">
+        <aside id="sidebar">
+            <div class="logo"><h2>STUDENTHUB</h2><p>Student Portal</p></div>
+            <nav>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 10px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">MAIN MENU</p>
+                <a href="home.html">Home</a>
+                <a href="dashboard.php" class="active">Dashboard</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">ACADEMICS & CAMPUS</p>
+                <a href="notices.html">Academic Notices</a>
+                <a href="events.html">Campus Events</a>
+                <a href="profile.html">Profile & Directory</a>
+                <a href="faq.html">FAQ</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">INFO & SUPPORT</p>
+                <a href="about.html">About</a>
+                <a href="contact.php">Contact</a>
+                <a href="feedback.html">Feedback</a>
+                
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 20px 0 5px 15px; font-weight: bold; letter-spacing: 1px;">ACCOUNT</p>
+                <a href="logout.php">Logout</a>
+            </nav>
+            <div class="user-profile">
+                <p><?php echo htmlspecialchars($_SESSION['user_name']); ?></p>
+                <span><?php echo htmlspecialchars($_SESSION['user_email']); ?></span>
+                <a href="logout.php" style="color: #d93025; font-weight: bold;">Sign out</a>
+            </div>
+        </aside>
+
+        <main>
+            <div class="top-header">
+                <div class="controls">
+                    <button id="hamburger-btn">☰ Menu</button>
+                    <button id="theme-toggle">🌙 Dark</button>
+                </div>
+                <div class="breadcrumbs">Home / Dashboard</div>
+            </div>
+
+            <h1>Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?></h1>
+            <p class="subtitle">
+                ROLE: <?php echo strtoupper(htmlspecialchars($_SESSION['user_role'])); ?> · 
+                Your academic snapshot for this semester — attendance, performance, and what's coming next.
+            </p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <p class="breadcrumbs">ATTENDANCE</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">84%</h2>
+                    <p class="subtitle" style="margin:0;">116 of 138 classes</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs">AVERAGE SCORE</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">33</h2>
+                    <p class="subtitle" style="margin:0;">7 assessments recorded</p>
+                </div>
+                <div class="card">
+                    <p class="breadcrumbs">UPCOMING EVENTS</p>
+                    <h2 style="font-size: 2.5rem; margin: 10px 0;">4</h2>
+                    <p class="subtitle" style="margin:0;">Campus calendar</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="slider-header">
+                    <div>
+                        <p class="breadcrumbs">HIGHLIGHTS</p>
+                        <h2 style="margin-top: 5px;">What's happening</h2>
+                    </div>
+                    <div class="slider-controls">
+                        <button id="prev-slide">&larr;</button>
+                        <button id="next-slide">&rarr;</button>
+                    </div>
+                </div>
+
+                <div class="slide active">
+                    <span class="tag academic">📚 Academic</span>
+                    <h3>Mid-semester examination timetable released</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted);">Check the latest exam schedule and plan your preparation early.</p>
+                </div>
+                <div class="slide">
+                    <span class="tag event">🏆 Events</span>
+                    <h3>Inter-Department Football League</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted);">Opening matches of the annual league start next week.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+</html>
